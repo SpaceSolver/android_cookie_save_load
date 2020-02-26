@@ -4,7 +4,7 @@
    * `CookieManager cm = CookieManager.getInstance();`
 * 主に使いそうなメソッド(CookieManager)
    * `CookieManager#setAcceptCookie`
-   * `CookieManager#setAcceptCookie`
+   * `CookieManager#setAcceptThirdPartyCookies`
 * 関連しそうなメソッドとか
    * webview自体のjavascript有効無効
       * webView.getSettings().setJavaScriptEnabled

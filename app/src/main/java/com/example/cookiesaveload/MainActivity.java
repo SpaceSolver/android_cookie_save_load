@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.CookieManager;
 import android.webkit.ValueCallback;
@@ -14,10 +15,14 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView logView;
     private WebView webView;
+    private String URL;
+    public final String TAG = MainActivity.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        URL = getString(R.string.url);
         logView = (TextView)findViewById(R.id.FirstBrowseLogWindow);
         webView = (WebView)findViewById(R.id.FirstWebView);
         webView.getSettings().setJavaScriptEnabled(true);
@@ -33,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         CookieManager cm = CookieManager.getInstance();
         cm.setAcceptCookie(true);
         cm.setAcceptThirdPartyCookies(webView, true);
-        webView.loadUrl("https://www.google.com/");
+        webView.loadUrl(URL);
     }
 
     public void onNonCookieBrowseButtonClicked(View view) {
@@ -41,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         CookieManager cm = CookieManager.getInstance();
         cm.setAcceptCookie(false);
         cm.setAcceptThirdPartyCookies(webView, false);
-        webView.loadUrl("https://www.google.com/");
+        webView.loadUrl(URL);
     }
 
     public void onClearCookieButtonClicked(View view) {
@@ -59,6 +64,13 @@ public class MainActivity extends AppCompatActivity {
     public void onFlushCookieButtonClicked(View view) {
         CookieManager cm = CookieManager.getInstance();
         cm.flush();
+    }
+
+    public void onDumpCookieButtonClicked(View view) {
+        CookieManager cm = CookieManager.getInstance();
+        String body = cm.getCookie(URL);
+        Log.d(TAG, body);
+        log(body);
     }
 
     public void onSwitch2ndBrowseButtonClicked(View view) {

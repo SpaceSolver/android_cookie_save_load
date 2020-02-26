@@ -39,6 +39,7 @@
 
             <Button
                 android:id="@+id/FlushCookieButton"
+                style="@style/Widget.AppCompat.Button.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="onFlushCookieButtonClicked"
@@ -46,13 +47,23 @@
 
             <Button
                 android:id="@+id/CookieClearButton"
+                style="@style/Widget.AppCompat.Button.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="onClearCookieButtonClicked"
                 android:text="Clear" />
 
             <Button
+                android:id="@+id/DumpCookieButton"
+                style="@style/Widget.AppCompat.Button.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onDumpCookieButtonClicked"
+                android:text="Dump" />
+
+            <Button
                 android:id="@+id/Switch2ndBrowseButton"
+                style="@style/Widget.AppCompat.Button.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="onSwitch2ndBrowseButtonClicked"

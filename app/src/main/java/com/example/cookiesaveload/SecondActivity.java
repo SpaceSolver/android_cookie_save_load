@@ -13,10 +13,12 @@ import android.widget.TextView;
 public class SecondActivity extends AppCompatActivity {
     private TextView logView;
     private WebView webView;
+    private String URL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        URL = getString(R.string.url);
         setContentView(R.layout.activity_second);
         logView = (TextView)findViewById(R.id.SecondBrowseLogWindow);
         webView = (WebView)findViewById(R.id.SecondBrowseWebView);
@@ -32,7 +34,7 @@ public class SecondActivity extends AppCompatActivity {
         CookieManager cm = CookieManager.getInstance();
         cm.setAcceptCookie(true);
         cm.setAcceptThirdPartyCookies(webView, true);
-        webView.loadUrl("https://www.google.com/");
+        webView.loadUrl(URL);
     }
 
     public void onSwitchToFirstBrowseButtonClicked(View view) {

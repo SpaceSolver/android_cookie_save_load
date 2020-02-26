@@ -44,6 +44,8 @@
          * このボタンで永続化しないとアプリ終了にてcookieが消える
       * [CLEAR]ボタン
          * 保存済みのすべてのcookieを削除する
+      * [DUMP]ボタン
+         * 保存済みのcookieの中身をTextEditとLogCatにダンプ
       * [SWITCH]ボタン
          * 2つ目のActivityに切り替える
    * 2つ目のActivity
